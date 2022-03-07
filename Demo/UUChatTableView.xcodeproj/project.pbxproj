@@ -7,7 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		217109B427D5D71C00BB810A /* ChatNavBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 217109B327D5D71C00BB810A /* ChatNavBarView.m */; };
+		217109BF27D5EC0200BB810A /* WLTipview.m in Sources */ = {isa = PBXBuildFile; fileRef = 217109B927D5EC0200BB810A /* WLTipview.m */; };
+		217109C027D5EC0200BB810A /* WLToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 217109BC27D5EC0200BB810A /* WLToast.m */; };
+		217109C127D5EC0200BB810A /* UIView+GradientBgColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 217109BD27D5EC0200BB810A /* UIView+GradientBgColor.m */; };
+		217109C227D5EC0200BB810A /* ToastManage.m in Sources */ = {isa = PBXBuildFile; fileRef = 217109BE27D5EC0200BB810A /* ToastManage.m */; };
 		217B021127D0B3CF00991723 /* SparkMessageContentButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 217B021027D0B3CF00991723 /* SparkMessageContentButton.m */; };
+		217B024927D1D9F500991723 /* SparkH5BaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = 217B024527D1D9F500991723 /* SparkH5BaseController.m */; };
+		217B024A27D1D9F500991723 /* IDSWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 217B024827D1D9F500991723 /* IDSWebViewController.m */; };
+		217B025027D216FA00991723 /* PreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 217B024F27D216FA00991723 /* PreViewController.m */; };
 		21FCA82D27D09D1C00CC2C38 /* SparkInputToolsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 21FCA82C27D09D1C00CC2C38 /* SparkInputToolsView.m */; };
 		65BDA9271FFD02E400C0848A /* SparkAVAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BDA9171FFD02E400C0848A /* SparkAVAudioPlayer.m */; };
 		65BDA9281FFD02E400C0848A /* SparkInputFunctionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 65BDA9181FFD02E400C0848A /* SparkInputFunctionView.m */; };
@@ -45,8 +53,24 @@
 /* Begin PBXFileReference section */
 		0C1DFEA83C0F1A67F297FE52 /* Pods-UUChatTableView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UUChatTableView.release.xcconfig"; path = "Pods/Target Support Files/Pods-UUChatTableView/Pods-UUChatTableView.release.xcconfig"; sourceTree = "<group>"; };
 		0D9A386DD91B302B830B13BB /* Pods-UUChatTableView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UUChatTableView.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UUChatTableView/Pods-UUChatTableView.debug.xcconfig"; sourceTree = "<group>"; };
+		217109B227D5D71C00BB810A /* ChatNavBarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatNavBarView.h; sourceTree = "<group>"; };
+		217109B327D5D71C00BB810A /* ChatNavBarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatNavBarView.m; sourceTree = "<group>"; };
+		217109B627D5EC0200BB810A /* ToastManage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToastManage.h; sourceTree = "<group>"; };
+		217109B827D5EC0200BB810A /* WLToast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLToast.h; sourceTree = "<group>"; };
+		217109B927D5EC0200BB810A /* WLTipview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLTipview.m; sourceTree = "<group>"; };
+		217109BA27D5EC0200BB810A /* UIView+GradientBgColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+GradientBgColor.h"; sourceTree = "<group>"; };
+		217109BB27D5EC0200BB810A /* WLTipview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLTipview.h; sourceTree = "<group>"; };
+		217109BC27D5EC0200BB810A /* WLToast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLToast.m; sourceTree = "<group>"; };
+		217109BD27D5EC0200BB810A /* UIView+GradientBgColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+GradientBgColor.m"; sourceTree = "<group>"; };
+		217109BE27D5EC0200BB810A /* ToastManage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToastManage.m; sourceTree = "<group>"; };
 		217B020F27D0B3CF00991723 /* SparkMessageContentButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SparkMessageContentButton.h; sourceTree = "<group>"; };
 		217B021027D0B3CF00991723 /* SparkMessageContentButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SparkMessageContentButton.m; sourceTree = "<group>"; };
+		217B024527D1D9F500991723 /* SparkH5BaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SparkH5BaseController.m; sourceTree = "<group>"; };
+		217B024627D1D9F500991723 /* IDSWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDSWebViewController.h; sourceTree = "<group>"; };
+		217B024727D1D9F500991723 /* SparkH5BaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SparkH5BaseController.h; sourceTree = "<group>"; };
+		217B024827D1D9F500991723 /* IDSWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDSWebViewController.m; sourceTree = "<group>"; };
+		217B024E27D216FA00991723 /* PreViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PreViewController.h; sourceTree = "<group>"; };
+		217B024F27D216FA00991723 /* PreViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PreViewController.m; sourceTree = "<group>"; };
 		21FCA82B27D09D1C00CC2C38 /* SparkInputToolsView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SparkInputToolsView.h; sourceTree = "<group>"; };
 		21FCA82C27D09D1C00CC2C38 /* SparkInputToolsView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SparkInputToolsView.m; sourceTree = "<group>"; };
 		3E171B44BD2925E1410C2AA8 /* Pods_UUChatTableView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UUChatTableView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,6 +140,40 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		217109B527D5EC0200BB810A /* ToastManage */ = {
+			isa = PBXGroup;
+			children = (
+				217109B627D5EC0200BB810A /* ToastManage.h */,
+				217109B727D5EC0200BB810A /* views */,
+				217109BE27D5EC0200BB810A /* ToastManage.m */,
+			);
+			path = ToastManage;
+			sourceTree = "<group>";
+		};
+		217109B727D5EC0200BB810A /* views */ = {
+			isa = PBXGroup;
+			children = (
+				217109B827D5EC0200BB810A /* WLToast.h */,
+				217109B927D5EC0200BB810A /* WLTipview.m */,
+				217109BA27D5EC0200BB810A /* UIView+GradientBgColor.h */,
+				217109BB27D5EC0200BB810A /* WLTipview.h */,
+				217109BC27D5EC0200BB810A /* WLToast.m */,
+				217109BD27D5EC0200BB810A /* UIView+GradientBgColor.m */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		217B024427D1D9F500991723 /* WebViewController */ = {
+			isa = PBXGroup;
+			children = (
+				217B024627D1D9F500991723 /* IDSWebViewController.h */,
+				217B024827D1D9F500991723 /* IDSWebViewController.m */,
+				217B024727D1D9F500991723 /* SparkH5BaseController.h */,
+				217B024527D1D9F500991723 /* SparkH5BaseController.m */,
+			);
+			path = WebViewController;
+			sourceTree = "<group>";
+		};
 		434893CE85592029495B05C7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +209,8 @@
 				65BDAAF61FFE66DD00C0848A /* SparkChatCategory.m */,
 				B7B905ED1A5BD04700A46EFD /* SparkChatModel.h */,
 				B7B905EE1A5BD04700A46EFD /* SparkChatModel.m */,
+				217109B227D5D71C00BB810A /* ChatNavBarView.h */,
+				217109B327D5D71C00BB810A /* ChatNavBarView.m */,
 			);
 			name = Class;
 			path = ../Class;
@@ -180,10 +240,14 @@
 		B7B9051B1A5B770200A46EFD /* UUChatTableView */ = {
 			isa = PBXGroup;
 			children = (
+				217109B527D5EC0200BB810A /* ToastManage */,
+				217B024427D1D9F500991723 /* WebViewController */,
 				B7B905201A5B770200A46EFD /* AppDelegate.h */,
 				B7B905211A5B770200A46EFD /* AppDelegate.m */,
 				B7B905421A5B772900A46EFD /* RootViewController.h */,
 				B7B905431A5B772900A46EFD /* RootViewController.m */,
+				217B024E27D216FA00991723 /* PreViewController.h */,
+				217B024F27D216FA00991723 /* PreViewController.m */,
 				B7B905291A5B770200A46EFD /* Images.xcassets */,
 				B7B9052B1A5B770200A46EFD /* LaunchScreen.xib */,
 				B7B9051C1A5B770200A46EFD /* Supporting Files */,
@@ -403,11 +467,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				65BDA92E1FFD02E400C0848A /* SparkImageAvatarBrowser.m in Sources */,
+				217109C227D5EC0200BB810A /* ToastManage.m in Sources */,
+				217109C127D5EC0200BB810A /* UIView+GradientBgColor.m in Sources */,
 				65BDA92C1FFD02E400C0848A /* SparkChatProgressHUD.m in Sources */,
 				B7B905221A5B770200A46EFD /* AppDelegate.m in Sources */,
+				217B024A27D1D9F500991723 /* IDSWebViewController.m in Sources */,
 				217B021127D0B3CF00991723 /* SparkMessageContentButton.m in Sources */,
+				217109BF27D5EC0200BB810A /* WLTipview.m in Sources */,
 				B7B905451A5B772900A46EFD /* RootViewController.m in Sources */,
 				65BDA9281FFD02E400C0848A /* SparkInputFunctionView.m in Sources */,
+				217109B427D5D71C00BB810A /* ChatNavBarView.m in Sources */,
+				217109C027D5EC0200BB810A /* WLToast.m in Sources */,
 				B7B9051F1A5B770200A46EFD /* main.m in Sources */,
 				65BDA92A1FFD02E400C0848A /* SparkChatMessageFrame.m in Sources */,
 				65BDA9271FFD02E400C0848A /* SparkAVAudioPlayer.m in Sources */,
@@ -417,6 +487,8 @@
 				21FCA82D27D09D1C00CC2C38 /* SparkInputToolsView.m in Sources */,
 				65BDA92B1FFD02E400C0848A /* SparkChatMessageCell.m in Sources */,
 				B7B905EF1A5BD04700A46EFD /* SparkChatModel.m in Sources */,
+				217B025027D216FA00991723 /* PreViewController.m in Sources */,
+				217B024927D1D9F500991723 /* SparkH5BaseController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

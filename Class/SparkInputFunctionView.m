@@ -56,6 +56,8 @@
         self.btnSendMessage.titleLabel.font = [UIFont systemFontOfSize:12];
         [self.btnSendMessage addTarget:self action:@selector(sendMessage:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:self.btnSendMessage];
+        [self changeSendBtnWithPhoto:NO];
+        self.isAbleToSendTextMessage = YES;
         
         //改变状态（语音、文字）
         self.btnChangeVoiceState = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -238,30 +240,35 @@
 //改变输入与录音状态
 - (void)voiceRecord:(UIButton *)sender
 {
-    self.btnVoiceRecord.hidden = !self.btnVoiceRecord.hidden;
-    self.textViewInput.hidden  = !self.textViewInput.hidden;
-    isbeginVoiceRecord = !isbeginVoiceRecord;
-    if (isbeginVoiceRecord) {
-        [self.btnChangeVoiceState setBackgroundImage:[UIImage uu_imageWithName:@"chat_ipunt_message"] forState:UIControlStateNormal];
-        [self.textViewInput resignFirstResponder];
-    }else{
-        [self.btnChangeVoiceState setBackgroundImage:[UIImage uu_imageWithName:@"chat_voice_record"] forState:UIControlStateNormal];
-        [self.textViewInput becomeFirstResponder];
+    if (self.selVoidBlock) {
+        self.selVoidBlock();
     }
+//    self.btnVoiceRecord.hidden = !self.btnVoiceRecord.hidden;
+//    self.textViewInput.hidden  = !self.textViewInput.hidden;
+//    isbeginVoiceRecord = !isbeginVoiceRecord;
+//    if (isbeginVoiceRecord) {
+//        [self.btnChangeVoiceState setBackgroundImage:[UIImage uu_imageWithName:@"chat_ipunt_message"] forState:UIControlStateNormal];
+//        [self.textViewInput resignFirstResponder];
+//    }else{
+//        [self.btnChangeVoiceState setBackgroundImage:[UIImage uu_imageWithName:@"chat_voice_record"] forState:UIControlStateNormal];
+//        [self.textViewInput becomeFirstResponder];
+//    }
 }
 
 //发送消息（文字图片）
 - (void)sendMessage:(UIButton *)sender
 {
-    if (self.isAbleToSendTextMessage) {
-        NSString *resultStr = [self.textViewInput.text stringByReplacingOccurrencesOfString:@"   " withString:@""];
-        [self.delegate SparkInputFunctionView:self sendMessage:resultStr];
-    }
-    else{
-        [self.textViewInput resignFirstResponder];
-        UIActionSheet *actionSheet= [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Camera",@"Images",nil];
-        [actionSheet showInView:self.window];
-    }
+//    if (self.isAbleToSendTextMessage) {
+//        NSString *resultStr = [self.textViewInput.text stringByReplacingOccurrencesOfString:@"   " withString:@""];
+//        [self.delegate SparkInputFunctionView:self sendMessage:resultStr];
+//    }
+//    else{
+//        [self.textViewInput resignFirstResponder];
+//        UIActionSheet *actionSheet= [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Camera",@"Images",nil];
+//        [actionSheet showInView:self.window];
+//    }
+    NSString *resultStr = [self.textViewInput.text stringByReplacingOccurrencesOfString:@"   " withString:@""];
+    [self.delegate SparkInputFunctionView:self sendMessage:resultStr];
 }
 
 

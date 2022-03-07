@@ -225,7 +225,7 @@
     }else if (message.from == UUMessageFromOther){
         normal = [UIImage uu_imageWithName:@"chatfrom_bg_normal"];
         normal = [normal resizableImageWithCapInsets:UIEdgeInsetsMake(35, 22, 10, 10)];
-    }else{
+    }else  if (message.from == UUMessageFromNarrator){
         normal = [UIImage uu_imageWithName:@""];
         normal = [normal resizableImageWithCapInsets:UIEdgeInsetsMake(35, 22, 10, 10)];
     }

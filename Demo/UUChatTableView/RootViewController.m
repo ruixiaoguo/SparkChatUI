@@ -14,6 +14,8 @@
 #import "SparkChatMessage.h"
 #import <MJRefresh/MJRefresh.h>
 #import "SparkChatCategory.h"
+#import "IDSWebViewController.h"
+#import "PreViewController.h"
 #define KeyBordToolsHight 90
 #define mainWindows [[[UIApplication sharedApplication] delegate]window]
 #define isIphoneX mainWindows.safeAreaInsets.bottom>0
@@ -71,8 +73,8 @@
 		_chatTableView.frame = CGRectMake(0, 0, self.view.uu_width, self.view.uu_height-KeyBordToolsHight-_keyboardHeight);
 		_inputFuncView.frame = CGRectMake(0, _chatTableView.uu_bottom, self.view.uu_width, KeyBordToolsHight);
 	} else {
-		_chatTableView.frame = CGRectMake(0, 0, self.view.uu_width, self.view.uu_height-KeyBordToolsHight);
-		_inputFuncView.frame = CGRectMake(0, _chatTableView.uu_bottom-BottemHight, self.view.uu_width, KeyBordToolsHight);
+		_chatTableView.frame = CGRectMake(0, 0, self.view.uu_width, self.view.uu_height-KeyBordToolsHight-BottemHight);
+		_inputFuncView.frame = CGRectMake(0, _chatTableView.uu_bottom, self.view.uu_width, KeyBordToolsHight);
 	}
 }
 
@@ -98,6 +100,19 @@
     _inputFuncView.selRooterBlock = ^(NSString *typeName) {
         weakSelf.currenRole = typeName;
     };
+    _inputFuncView.selVoidBlock = ^{
+        IDSWebViewController *idsVC = [[IDSWebViewController alloc]init];
+        idsVC.navTitle = @"网络攻击";
+        idsVC.webUrl = @"https://cybermap.kaspersky.com/cn";
+        [weakSelf.navigationController pushViewController:idsVC animated:YES];
+    };
+    self.navigationController.navigationBar.tintColor = [UIColor grayColor];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize target:self action:@selector(PreViewClick)];
+}
+
+-(void)PreViewClick{
+    PreViewController *preVC = [[PreViewController alloc]init];
+    [self.navigationController pushViewController:preVC animated:YES];
 }
 
 - (void)addRefreshViews
@@ -134,7 +149,7 @@
 {
 	if (self.chatModel.dataSource.count==0) { return; }
 	NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.chatModel.dataSource.count-1 inSection:0];
-	[self.chatTableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:NO];
+	[self.chatTableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
 }
 
 -(void)keyboardChange:(NSNotification *)notification
@@ -170,11 +185,24 @@
 
 - (void)SparkInputFunctionView:(SparkInputFunctionView *)funcView sendMessage:(NSString *)message
 {
+//    if (message.length==0) {
+//        return;
+//    }
     NSDictionary *dic = @{@"strContent": message,
                           @"type": @(UUMessageTypeText)};
     funcView.textViewInput.text = @"";
-    [funcView changeSendBtnWithPhoto:YES];
     [self dealTheFunctionData:dic];
+}
+
+#pragma mark == tool
+- (void)displayTableviewCell:(UITableViewCell *)cell withAnimationAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row == self.chatModel.dataSource.count - 1) {
+        cell.alpha = 0;
+        [UIView animateWithDuration:0.5 animations:^{
+            cell.alpha = 1;
+        }];
+    }
 }
 
 - (void)SparkInputFunctionView:(SparkInputFunctionView *)funcView sendPicture:(UIImage *)image
@@ -216,6 +244,7 @@
 {
     SparkChatMessageCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SparkChatMessageCell class])];
 	cell.messageFrame = self.chatModel.dataSource[indexPath.row];
+    [self displayTableviewCell:cell withAnimationAtIndexPath:indexPath];
     cell.selHeaderBlock = ^(NSString *headerName) {
         NSLog(@"点击头像====%@",headerName);
     };
@@ -239,12 +268,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self.view endEditing:YES];
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
-    [self.view endEditing:YES];
 }
+
 
 @end

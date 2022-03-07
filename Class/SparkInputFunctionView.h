@@ -37,5 +37,6 @@
 - (void)changeSendBtnWithPhoto:(BOOL)isPhoto;
 
 @property(nonatomic,copy)void(^selRooterBlock)(NSString *typeName);
+@property(nonatomic,copy)void(^selVoidBlock)(void);
 
 @end

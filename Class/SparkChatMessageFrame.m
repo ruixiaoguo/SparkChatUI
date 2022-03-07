@@ -36,14 +36,13 @@
     
     // 4、计算内容位置
     CGFloat contentX = CGRectGetMaxX(_iconF) + ChatMargin;
-   
     //根据种类分
     CGSize contentSize;
     switch (_message.type) {
         case UUMessageTypeText:
 			contentSize = [_message.strContent uu_sizeWithFont:ChatContentFont constrainedToSize:CGSizeMake(MAX(Main_Screen_Width-150, screenW*0.6), CGFLOAT_MAX)];
             if (_message.from == UUMessageFromNarrator) {
-                contentSize = CGSizeMake(Main_Screen_Width-150, contentSize.height);
+                contentSize = CGSizeMake(Main_Screen_Width-ChatMargin*6, contentSize.height);
             }
 			contentSize.height = MAX(contentSize.height, 30);
 			contentSize.width = MAX(contentSize.width, 40);
@@ -59,6 +58,8 @@
     }
     if (_message.from == UUMessageFromMe) {
         contentX = screenW - (contentSize.width + ChatContentBiger + ChatContentSmaller + ChatMargin + ChatIconWH + ChatMargin);
+    }else if (_message.from == UUMessageFromNarrator) {
+        contentX = ChatMargin;
     }
     _contentF = CGRectMake(contentX, CGRectGetMinY(_iconF) + 5, contentSize.width + ChatContentBiger + ChatContentSmaller, contentSize.height + ChatContentTopBottom * 2);
     
