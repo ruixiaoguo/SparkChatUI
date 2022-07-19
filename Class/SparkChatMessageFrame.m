@@ -27,7 +27,7 @@
 	}
     
     // 2、计算头像位置
-    CGFloat const iconX = _message.from == UUMessageFromMe ?(screenW - ChatMargin - ChatIconWH):ChatMargin;
+    CGFloat const iconX = _message.from == UUMessageFromMe ?(screenW - ChatMargin - ChatIconWH):ChatMargin+20;
     _iconF = CGRectMake(iconX, CGRectGetMaxY(_timeF) + ChatMargin, ChatIconWH, ChatIconWH);
     
     // 3、计算ID位置

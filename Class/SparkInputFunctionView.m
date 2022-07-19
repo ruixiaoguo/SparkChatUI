@@ -38,7 +38,7 @@
     self = [super initWithFrame:frame];
 	
     if (self) {
-		self.backgroundColor = [UIColor whiteColor];
+        self.backgroundColor = [UIColor grayColor];
 		self.isAbleToSendTextMessage = NO;
         //选择角色
         self.toolsView = [[SparkInputToolsView alloc]init];

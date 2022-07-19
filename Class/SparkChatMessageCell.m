@@ -40,10 +40,8 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        
-        self.backgroundColor = [UIColor clearColor];
+        self.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.1];
         self.selectionStyle = UITableViewCellSelectionStyleNone;
-		
         // 1、创建时间
         self.dateLabel = [[UILabel alloc] init];
         self.dateLabel.textAlignment = NSTextAlignmentCenter;

@@ -15,7 +15,7 @@
     self = [super initWithFrame:frame];
     
     if (self) {
-        self.backgroundColor = [UIColor whiteColor];
+        self.backgroundColor = [UIColor grayColor];
         [self creatUI];
     }
     return self;

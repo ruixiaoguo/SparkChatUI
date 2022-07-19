@@ -51,6 +51,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    self.view.backgroundColor = [UIColor lightGrayColor];
     self.navigationItem.title = @"SparkChat";
     //add notification
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardChange:) name:UIKeyboardWillShowNotification object:nil];
@@ -87,6 +88,7 @@
 	_chatTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 	_chatTableView.delegate = self;
 	_chatTableView.dataSource = self;
+    _chatTableView.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.1];
 	[self.view addSubview:_chatTableView];
 	
 	[_chatTableView registerClass:[SparkChatMessageCell class] forCellReuseIdentifier:NSStringFromClass([SparkChatMessageCell class])];

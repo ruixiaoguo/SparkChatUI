@@ -76,7 +76,7 @@
     /** 章节进度 */
     self.rateProgressView = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
     self.rateProgressView.frame = CGRectMake(0, self.view.uu_height-BottemHight-5, self.view.uu_width, 5);
-    CGAffineTransform transform = CGAffineTransformMakeScale(1.0f, 3.0f);
+    CGAffineTransform transform = CGAffineTransformMakeScale(1.0f, 1.0f);
     self.rateProgressView.transform = transform;
     self.rateProgressView.trackTintColor = [UIColor lightGrayColor];
     self.rateProgressView.progressTintColor = [UIColor orangeColor];
@@ -110,7 +110,7 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    return 10;
+    return 5;
 }
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
@@ -120,7 +120,7 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    return 20;
+    return 30;
 }
 
 -(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
@@ -135,7 +135,7 @@
     cell.messageFrame = self.chatModel.dataSource[indexPath.row];
     [self displayTableviewCell:cell withAnimationAtIndexPath:indexPath];
     cell.selHeaderBlock = ^(NSString *headerName) {
-        NSLog(@"点击头像====%@",headerName);
+        [self tapScreen];
     };
     cell.cancleDataBlock = ^{
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"确定删除这一条吗？" message:@"" preferredStyle:UIAlertControllerStyleAlert];
